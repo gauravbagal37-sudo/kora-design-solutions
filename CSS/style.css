@@ -687,11 +687,11 @@ background:#e68900;
 }
 .hero-right img{
 
-    animation:floatImage 4s ease-in-out infinite;
+    animation:floatimage 4s ease-in-out infinite;
 
 }
 
-@keyframes floatImage{
+@keyframes floatimage{
 
     0%{
         transform:translateY(0);
