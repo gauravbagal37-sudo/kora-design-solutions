@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gaurav Bagal · CS Student</title>
+  <!-- Font Awesome for icons (optional but adds polish) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #f4f7fc;  /* soft blue‑grey background */
+      font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      line-height: 1.6;
+      color: #1e293b;
+      padding: 2rem 1rem;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      background: white;
+      border-radius: 2rem;
+      box-shadow: 0 20px 35px -8px rgba(0, 20, 30, 0.15);
+      overflow: hidden;
+    }
+
+    /* header with subtle color gradient */
+    .header {
+      background: linear-gradient(145deg, #0b2b44, #123b5e);
+      color: white;
+      padding: 2.5rem 3rem 2rem 3rem;
+    }
+
+    .header h1 {
+      font-size: 3.2rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.3rem;
+    }
+
+    .header .tagline {
+      font-size: 1.4rem;
+      font-weight: 400;
+      color: #b9d9f0;
+      margin-bottom: 1.5rem;
+    }
+
+    .header .summary {
+      max-width: 800px;
+      background: rgba(255,255,255,0.06);
+      padding: 1.2rem 1.8rem;
+      border-radius: 60px;
+      border-left: 6px solid #5fa8d3;
+      font-size: 1.05rem;
+      backdrop-filter: blur(4px);
+      color: #e2edf7;
+    }
+
+    /* contact row — colored cards */
+    .contact-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 2rem;
+      background: rgba(0,0,0,0.2);
+      border-radius: 60px;
+      padding: 1rem 2rem;
+      justify-content: space-between;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      color: #d9edff;
+    }
+
+    .contact-item i {
+      color: #f6b83d;   /* warm gold accent */
+      font-size: 1.2rem;
+      width: 1.6rem;
+      text-align: center;
+    }
+
+    .contact-item span {
+      font-size: 1rem;
+      font-weight: 400;
+    }
+
+    /* main 2‑column layout */
+    .main-grid {
+      display: grid;
+      grid-template-columns: 1fr 2.2fr;
+      gap: 2rem;
+      padding: 2.5rem 3rem;
+    }
+
+    /* left panel – soft colored background */
+    .left-panel {
+      background: #f0f6fe;   /* very light blue */
+      border-radius: 2rem;
+      padding: 2rem 1.8rem;
+      box-shadow: inset 0 0 0 1px rgba(98, 154, 209, 0.15);
+    }
+
+    .section-title {
+      font-size: 1.4rem;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      color: #0e2f47;
+      border-bottom: 3px solid #cbd5e1;
+      padding-bottom: 0.4rem;
+    }
+
+    .section-title i {
+      color: #2a6f97;
+      font-size: 1.3rem;
+    }
+
+    /* skill chips */
+    .skill-chip {
+      display: inline-block;
+      background: white;
+      border-radius: 40px;
+      padding: 0.4rem 1.2rem;
+      margin: 0.25rem 0.25rem;
+      font-size: 0.9rem;
+      font-weight: 500;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+      border: 1px solid #cde0ef;
+      color: #144a6f;
+    }
+
+    .skill-chip i {
+      margin-right: 5px;
+      color: #e68a2e;
+      font-size: 0.8rem;
+    }
+
+    .list-item {
+      margin-bottom: 0.8rem;
+      display: flex;
+      align-items: baseline;
+      gap: 0.6rem;
+    }
+
+    .list-item i {
+      color: #f6b83d;
+      font-size: 0.9rem;
+      width: 1.2rem;
+      text-align: center;
+    }
+
+    .list-item strong {
+      color: #0b2b44;
+    }
+
+    .right-panel {
+      background: white;
+    }
+
+    .right-panel .section-title {
+      border-bottom: 3px solid #ffe5c8;
+      color: #1e405b;
+    }
+
+    .right-panel .section-title i {
+      color: #f09b43;
+    }
+
+    /* experience / education cards */
+    .exp-item {
+      margin-bottom: 2.2rem;
+    }
+
+    .exp-header {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      justify-content: space-between;
+      margin-bottom: 0.3rem;
+    }
+
+    .exp-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #003153;
+    }
+
+    .exp-date {
+      background: #dbeafe;
+      padding: 0.2rem 1rem;
+      border-radius: 40px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #035d8f;
+    }
+
+    .exp-sub {
+      font-weight: 600;
+      color: #2d5672;
+      margin: 0.2rem 0 0.5rem 0;
+    }
+
+    .exp-desc {
+      color: #334155;
+      font-size: 0.98rem;
+      list-style-type: none;
+    }
+
+    .exp-desc li {
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: baseline;
+      gap: 0.6rem;
+    }
+
+    .exp-desc li i {
+      color: #f6b83d;
+      font-size: 0.7rem;
+      align-self: center;
+      width: 1rem;
+    }
+
+    .badge-percent {
+      background: #e6f0fa;
+      color: #1e5b8a;
+      font-weight: 600;
+      padding: 0.15rem 0.8rem;
+      border-radius: 40px;
+      font-size: 0.8rem;
+      margin-left: 0.5rem;
+    }
+
+    hr {
+      border: 0;
+      border-top: 2px dashed #d4e2f0;
+      margin: 1.5rem 0;
+    }
+
+    /* footer / get in touch — similar to header */
+    .footer {
+      background: #0b2b44;
+      color: white;
+      padding: 2rem 3rem;
+      text-align: center;
+    }
+
+    .footer h3 {
+      font-size: 1.8rem;
+      font-weight: 500;
+      margin-bottom: 0.3rem;
+      color: #f6b83d;
+    }
+
+    .footer p {
+      color: #b9d9f0;
+      margin-bottom: 1rem;
+    }
+
+    .footer-icons a {
+      color: white;
+      background: #1c4c70;
+      width: 40px;
+      height: 40px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      margin: 0 0.3rem;
+      font-size: 1.2rem;
+      transition: 0.2s;
+      text-decoration: none;
+    }
+
+    .footer-icons a:hover {
+      background: #f6b83d;
+      color: #0b2b44;
+    }
+
+    /* responsive */
+    @media (max-width: 800px) {
+      .main-grid { grid-template-columns: 1fr; }
+      .header { padding: 1.5rem; }
+      .contact-row { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+
+  <!-- Header with name and summary -->
+  <div class="header">
+    <h1>Gaurav Bagal</h1>
+    <div class="tagline">BTech Computer Engineering · Sandip University</div>
+    <div class="summary">
+      <i class="fas fa-quote-left" style="color:#f6b83d; opacity:0.7; margin-right:8px;"></i>
+      Dedicated and ambitious BTech student with a foundation in computer science and hands‑on experience in basic programming. Skilled in HTML, CSS, and JavaScript for front‑end web development, with additional exposure to C/C++ and Python. Passionate about learning new technologies, problem‑solving, and building user‑friendly digital solutions. Eager to contribute to a dynamic team environment with exceptional communication abilities.
+    </div>
+
+    <!-- contact row (colorful) -->
+    <div class="contact-row">
+      <div class="contact-item"><i class="fas fa-map-pin"></i> <span>Nashik, 422001</span></div>
+      <div class="contact-item"><i class="fas fa-phone-alt"></i> <span>8767036032</span></div>
+      <div class="contact-item"><i class="fas fa-envelope"></i> <span>Gauravbagal37@gmail.com</span></div>
+    </div>
+  </div>
+
+  <!-- main two columns -->
+  <div class="main-grid">
+    <!-- LEFT PANEL: skills & extra -->
+    <div class="left-panel">
+      <!-- Skills section -->
+      <div class="section-title">
+        <i class="fas fa-code"></i> Technical Skills
+      </div>
+      <div>
+        <span class="skill-chip"><i class="fab fa-html5"></i> HTML5</span>
+        <span class="skill-chip"><i class="fab fa-css3-alt"></i> CSS3</span>
+        <span class="skill-chip"><i class="fab fa-js"></i> AJAX / JavaScript</span>
+        <span class="skill-chip"><i class="fas fa-database"></i> Data management</span>
+        <span class="skill-chip"><i class="fas fa-keyboard"></i> Data entry</span>
+        <span class="skill-chip"><i class="fas fa-headset"></i> Customer service</span>
+        <span class="skill-chip"><i class="fas fa-file-alt"></i> Documentation</span>
+        <span class="skill-chip"><i class="fas fa-clock"></i> Time management</span>
+        <span class="skill-chip"><i class="fas fa-chart-line"></i> Information analysis</span>
+        <span class="skill-chip"><i class="fas fa-cogs"></i> C / C++</span>
+        <span class="skill-chip"><i class="fab fa-python"></i> Python</span>
+      </div>
+
+      <!-- extra: languages / achievements -->
+      <hr>
+      <div class="section-title"><i class="fas fa-flag"></i> Languages</div>
+      <div class="list-item"><i class="fas fa-circle-check"></i> <strong>English</strong> (fluent)</div>
+      <div class="list-item"><i class="fas fa-circle-check"></i> <strong>Marathi</strong> (native)</div>
+      <div class="list-item"><i class="fas fa-circle-check"></i> Hindi (conversational)</div>
+
+      <hr>
+      <div class="section-title"><i class="fas fa-trophy"></i> Highlight</div>
+      <div class="list-item"><i class="fas fa-shield"></i> <strong>Captain</strong> – Kabaddi Team, Sandip University (2024‑2025)</div>
+      <div class="list-item"><i class="fas fa-users"></i> Team leadership & workshop organization</div>
+    </div>
+
+    <!-- RIGHT PANEL: experience & education -->
+    <div class="right-panel">
+      <!-- Experience section (from your resume) -->
+      <div class="section-title">
+        <i class="fas fa-briefcase"></i> Experience
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-header">
+          <span class="exp-title">IT & Front‑end Contributor</span>
+          <span class="exp-date">Student roles</span>
+        </div>
+        <div class="exp-sub">Sandip University, Nashik</div>
+        <ul class="exp-desc">
+          <li><i class="fas fa-chevron-right"></i> Ensured smooth workflow through effective coordination with other IT professionals on projects and tasks.</li>
+          <li><i class="fas fa-chevron-right"></i> Developed user interfaces with modern JavaScript frameworks, HTML5, and CSS.</li>
+          <li><i class="fas fa-chevron-right"></i> Attended development programs to gain competencies and boost skill set.</li>
+          <li><i class="fas fa-chevron-right"></i> Enhanced website functionality by optimizing existing code and implementing new features.</li>
+          <li><i class="fas fa-chevron-right"></i> Enhanced leadership skills of students by organizing team‑building activities and workshops.</li>
+          <li><i class="fas fa-chevron-right"></i> Improved time management among students with structured schedules, goal‑setting exercises, and progress tracking.</li>
+        </ul>
+      </div>
+
+      <!-- Education (main degree + 12th + 10th) -->
+      <div class="section-title">
+        <i class="fas fa-graduation-cap"></i> Education
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-header">
+          <span class="exp-title">B.Sc. Computer Engineering</span>
+          <span class="exp-date">Expected 2027-06</span>
+        </div>
+        <div class="exp-sub">Sandip University, Nashik</div>
+        <ul class="exp-desc">
+          <li><i class="fas fa-medal"></i> Captain – University Kabaddi Team (2024‑2025)</li>
+        </ul>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-header">
+          <span class="exp-title">Higher Secondary (12th) · IT</span>
+          <span class="badge-percent">75.33%</span>
+        </div>
+        <div class="exp-sub">Kai. Sau. G.F.Patil Jr. College, Shahada</div>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-header">
+          <span class="exp-title">Secondary (10th)</span>
+          <span class="badge-percent">74.20%</span>
+        </div>
+        <div class="exp-sub">Shet V.K.Shah Vidya Mandir, Shahada</div>
+      </div>
+
+      <!-- achievements / extra from resume: maybe you have workshop organising -->
+      <div class="section-title">
+        <i class="fas fa-star"></i> Additional
+      </div>
+      <div class="list-item"><i class="fas fa-people-group"></i> Organized team‑building workshops & leadership events</div>
+      <div class="list-item"><i class="fas fa-pen-ruler"></i> Front‑end practice: HTML5, CSS3, AJAX, responsive design</div>
+    </div>
+  </div>
+
+  <!-- Footer / contact again – inspired by Dhiraj's "Get in touch" -->
+  <div class="footer">
+    <h3>Let's connect</h3>
+    <p>Innovate · Collaborate · Build — open to projects, internships, and tech opportunities.</p>
+    <div class="footer-icons">
+      <a href="mailto:Gauravbagal37@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+      <a href="#" aria-label="Phone"><i class="fas fa-phone-alt"></i></a>
+      <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+      <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+    </div>
+    <p style="margin-top: 1.5rem; font-size: 0.9rem;">Nashik, India · 8767036032</p>
+  </div>
+</div>
+<!-- small note: replace # with actual profile links if needed -->
+</body>
+</html>
