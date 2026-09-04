@@ -18,7 +18,7 @@
     --light: #F8FAFC;
 }
 body{
-    background:#1cecf0;
+    background:#ffffff;
 }
 
 .navbar{
@@ -50,8 +50,8 @@ body{
 
 
 .kora{
-    color:oklab(70.87299999999999% 0.12975 0.14338);
-    font-size:40px;
+    color:oklab(0% 0 0);
+    font-size:15px;
     font-weight:700;
 
 }
@@ -63,22 +63,21 @@ body{
 }
 
 .nav-links a{
-    color:rgb(0, 0, 0);
+    color:rgb(82, 75, 75);
     text-decoration:none;
     font-size:17px;
     transition:.3s;
 }
 
 .nav-links a:hover{
-    color:#ff2f00;
+    color:#ff0000;
 }
 .hero{
     width:100%;
     min-height:100vh;
 
-    background:
-    linear-gradient(rgba(18, 161, 61, 0.8),hsl(185, 89%, 47%)),
-    url("../image/hero-bg.jpg");
+    background: linear-gradient(to right, #0a0b0d 0%, rgba(10, 11, 13, 0.95) 45%, rgba(10, 11, 13, 0.4) 100%),
+     url("../image/hero-bg.jpg") no-repeat center right / cover !important;
 
     background-size:cover;
     background-position:center;
@@ -133,7 +132,7 @@ body{
 }
 
 .btn{
-    background: linear-gradient(135deg,#F97316,#FBBF24);
+    background: linear-gradient(135deg,#000000,#000000);
     color:white;
     text-decoration:none;
     padding:15px 35px;
@@ -147,13 +146,13 @@ body{
 }
 
 .btn-outline{
-    background:linear-gradient(135deg,#F97316,#FBBF24);
+    background:linear-gradient(135deg,#f1e25f,#ff6600);
     border:2px solid white;
 }
 
 .btn-outline:hover{
-    background:white;
-    color:#073775;
+    background:rgb(255, 128, 0);
+    color:#f7f7f7;
 }
 /* ABOUT */
 
@@ -1273,6 +1272,6 @@ background:#e68900;
 
     .nav-links a:hover {
         background: #f5f5f5;
-        color: #ff2f00;
+        color: #13c0c0;
     }
 }
