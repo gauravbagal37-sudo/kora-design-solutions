@@ -76,7 +76,7 @@ body{
     width:100%;
     min-height:100vh;
 
-    background: linear-gradient(to right, #0a0b0d 0%, rgba(10, 11, 13, 0.95) 45%, rgba(10, 11, 13, 0.4) 100%),
+    background: linear-gradient(to right, #4173d7 0%, rgba(75, 116, 197, 0.95) 45%, rgb(58, 104, 196) 100%),
      url("../image/hero-bg.jpg") no-repeat center right / cover !important;
 
     background-size:cover;
