@@ -339,14 +339,14 @@ body{
 .why{
 
 padding:100px 8%;
-background:#0B1F3A;
+background:#ffffff;
 
 }
 
 .why .section-title h2,
 .why .section-title h5{
 
-color:white;
+color:rgb(223, 121, 59);
 
 }
 
@@ -360,7 +360,7 @@ gap:30px;
 
 .why-box{
 
-background:white;
+background:rgb(16, 21, 89);
 padding:40px;
 border-radius:15px;
 text-align:center;
@@ -377,7 +377,7 @@ transform:translateY(-10px);
 .why-box h3{
 
 font-size:35px;
-color:#ff9800;
+color:#ffffff;
 
 }
 
